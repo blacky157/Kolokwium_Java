@@ -22,10 +22,13 @@ public class Motorcycle extends Vehicle {
 
     }
 
+
     @Override
-    public void refuel(Vehicle target, double liters) {
-        System.out.println("Motór zatankowany");
+    public void refuel(double liters) {
+        this.fuelTank = this.fuelTank + liters;
+        System.out.println("pojazd zatankowany, masz teraz " + this.fuelTank);
     }
+
 
     @Override
     public Double checkToDrive() {
