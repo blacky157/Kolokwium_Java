@@ -8,8 +8,9 @@ public abstract class Vehicle implements Actions {
     Double fuelConsumption;
     Double fuelTank;
     Double mileage;
+    Double maxFuel;
 
-    public Vehicle(String registration, String vinNumber, String kolor, Double prize, Double fuelConsumption, Double fuelTank, Double mileage) {
+    public Vehicle(String registration, String vinNumber, String kolor, Double prize, Double fuelConsumption, Double fuelTank, Double mileage, Double maxFuel) {
         this.registration = registration;
         this.vinNumber = vinNumber;
         Kolor = kolor;
@@ -17,6 +18,7 @@ public abstract class Vehicle implements Actions {
         this.fuelConsumption = fuelConsumption;
         this.fuelTank = fuelTank;
         this.mileage = mileage;
+        this.maxFuel = maxFuel;
     }
 
 
