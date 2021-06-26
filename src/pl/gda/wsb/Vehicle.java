@@ -1,6 +1,6 @@
 package pl.gda.wsb;
 
-public abstract class Vehicle {
+public abstract class Vehicle implements Actions {
     String registration;
     String vinNumber;
     String Kolor;

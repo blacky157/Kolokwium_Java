@@ -1,6 +1,6 @@
 package pl.gda.wsb;
 
-public class Car extends Vehicle {
+public class Car extends Vehicle  {
     Integer doors;
 
     public Car(String registration, String vinNumber, String kolor, Double prize, Double fuelConsumption, Double fuelTank, Double mileage, Integer doors) {
@@ -8,5 +8,15 @@ public class Car extends Vehicle {
         super(registration, vinNumber, kolor, prize, fuelConsumption, fuelTank, mileage);
         this.doors = doors;
 
+    }
+
+    @Override
+    public void drive(Vehicle target) {
+        System.out.println("auto pojechało");
+    }
+
+    @Override
+    public void refuel(Vehicle target, double liters) {
+        System.out.println("fura zatankowana");
     }
 }
