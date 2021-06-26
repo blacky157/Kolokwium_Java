@@ -19,4 +19,13 @@ public class Car extends Vehicle  {
     public void refuel(Vehicle target, double liters) {
         System.out.println("fura zatankowana");
     }
+
+    @Override
+    public Double checkToDrive() {
+        Double a;
+        a= (this.fuelTank/this.fuelConsumption) *100;
+        System.out.println("pojazd przejedzie "+a);
+        return a;
+    }
+
 }

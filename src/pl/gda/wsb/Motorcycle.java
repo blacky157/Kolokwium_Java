@@ -17,4 +17,11 @@ public class Motorcycle extends Vehicle  {
     public void refuel(Vehicle target, double liters) {
         System.out.println("Motór zatankowany");
     }
+    @Override
+    public Double checkToDrive() {
+        Double a;
+        a= (this.fuelTank/this.fuelConsumption) *100;
+        System.out.println("Motor na zbiorniku przejedzie "+a);
+        return a;
+    }
 }

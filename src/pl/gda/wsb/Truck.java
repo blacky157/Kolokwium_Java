@@ -17,4 +17,11 @@ public class Truck extends Vehicle  {
     public void refuel(Vehicle target, double liters) {
         System.out.println("cieżarówka zatankowana");
     }
+    @Override
+    public Double checkToDrive() {
+        Double a;
+        a= (this.fuelTank/this.fuelConsumption) *100;
+        System.out.println("ciężarówka na zbiorniku przejedzie "+a);
+        return a;
+    }
 }
