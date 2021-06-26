@@ -3,8 +3,8 @@ package pl.gda.wsb;
 public class Motorcycle extends Vehicle {
     String type;
 
-    public Motorcycle(String registration, String vinNumber, String kolor, Double prize, Double fuelConsumption, Double fuelTank, Double mileage,Double maxFuel, String type) {
-        super(registration, vinNumber, kolor, prize, fuelConsumption, fuelTank, mileage,maxFuel);
+    public Motorcycle(String registration, String vinNumber, String color, Double prize, Double fuelConsumption, Double fuelTank, Double mileage, Double maxFuel, String type) {
+        super(registration, vinNumber, color, prize, fuelConsumption, fuelTank, mileage, maxFuel);
         this.type = type;
     }
 
@@ -25,14 +25,14 @@ public class Motorcycle extends Vehicle {
 
     @Override
     public void refuel(double liters) {
-        if(this.fuelTank + liters > this.maxFuel){
+        if (this.fuelTank + liters > this.maxFuel) {
             System.out.println("tyle się nie dało, zatankowałeś do pełna");
             this.fuelTank = this.maxFuel;
-        }else {
+        } else {
             this.fuelTank = this.fuelTank + liters;
             System.out.println("pojazd zatankowany, masz teraz " + this.fuelTank);
         }
-        System.out.println("masz teraz "+ this.fuelTank +" litrów w baku");
+        System.out.println("masz teraz " + this.fuelTank + " litrów w baku");
     }
 
 
@@ -42,5 +42,12 @@ public class Motorcycle extends Vehicle {
         a = (this.fuelTank / this.fuelConsumption) * 100;
         System.out.println("Motor na zbiorniku przejedzie " + a);
         return a;
+    }
+
+    @Override
+    public void changeColor(String newColor) {
+        this.color = newColor;
+        this.prize = prize * 1.05;
+        System.out.println("Wartość twojego pojazdu wazrasta, kosztuje teraz " + this.prize + " nowy kolort to: " + this.color);
     }
 }
