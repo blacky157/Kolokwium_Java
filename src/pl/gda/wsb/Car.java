@@ -1,6 +1,6 @@
 package pl.gda.wsb;
 
-public class Car extends Vehicle  {
+public class Car extends Vehicle {
     Integer doors;
 
     public Car(String registration, String vinNumber, String kolor, Double prize, Double fuelConsumption, Double fuelTank, Double mileage, Integer doors) {
@@ -11,8 +11,17 @@ public class Car extends Vehicle  {
     }
 
     @Override
-    public void drive(Vehicle target) {
-        System.out.println("auto pojechało");
+    public void drive(Double kilometers) {
+        if (checkToDrive() < kilometers) {
+            System.out.println("brakuje wachy");
+        } else {
+            this.mileage = this.mileage + kilometers;
+            this.fuelTank = this.fuelTank - (kilometers / 100) * this.fuelConsumption;
+            System.out.println("auto pojechało");
+            System.out.println("Pozostało Ci " + this.fuelTank + "l");
+            System.out.println("na licznku masz teraz " + this.mileage);
+        }
+
     }
 
     @Override
@@ -23,8 +32,8 @@ public class Car extends Vehicle  {
     @Override
     public Double checkToDrive() {
         Double a;
-        a= (this.fuelTank/this.fuelConsumption) *100;
-        System.out.println("pojazd przejedzie "+a);
+        a = (this.fuelTank / this.fuelConsumption) * 100;
+        System.out.println("pojazd przejedzie " + a);
         return a;
     }
 
