@@ -1,1 +1,1 @@
-"# zaliczamy" 
+Zadanie zaliczeniowe z podstaw JAVY.
